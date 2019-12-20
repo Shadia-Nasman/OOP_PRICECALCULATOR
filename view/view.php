@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<center>
 <?php include '/var/www/html/OOP_PRICECALCULATOR/model/model.php';?>   
 <?php include '/var/www/html/OOP_PRICECALCULATOR/controller/control.php';?>
 
@@ -23,7 +23,7 @@ echo "<div>";
         echo '<select name="customers" id="customers">';
         foreach ($cust_data as $name) {
           
-            echo '<option value="'.$name->price.'">'.$name->name.'</option>';
+            echo '<option value="'.$name->name.'">'.$name->name.'</option>';
             
           }
           echo '</select>';
@@ -36,30 +36,34 @@ echo "<div>";
 echo '<select name="products[]" id="products" multiple>';
 foreach ($products_data as $product) {
   
-    echo '<option value="'.$product->price.'">'.$product->name.'</option>';
-    
+    echo '<option value="'.$product->price.''.$product->name.'">'.$product->name.' : '.$product->price.' €</option>';
+  
+   
   }
   echo '</select>';
+  
+ 
+  
 
           
 //////////////////////////         
         ?>  
 
-          <select name="operation">
-	        	  <option value="plus">Plus</option>
-	            <option value="minus">Minus</option>
+        <!--  <select name="operation"> 
+	        	  <option value="plus">Plus</option> 
+	            <<option value="minus">Minus</option>
 	            <option value="multiply">Multiply</option>
-	            <option value="divided by">Devide</option>
+	            <option value="divided by">Devide</option> 
 	        </select>
-
+ -->
 
 	        <!-- <input name="number2" type="text" class="form-control" style="width: 150px; display: inline" /> -->
-	        <input name="submit" type="submit" value="Calculate" class="btn btn-primary" />
+	       <br> <input name="submit" type="submit" value="Calculate" class="btn btn-primary" />
 	    </form>
 
        
    </div>   
-    
+   </center>
 </body>
 
 </html>
